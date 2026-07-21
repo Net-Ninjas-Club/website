@@ -165,3 +165,33 @@ the fallback content, but the join form will show an error until Airtable is con
 - **Colours** → `tailwind.config.ts` (`ember`, `chalk`, `ink`, `steel` — pulled from your
   logo).
 - **Copy/wording** → the component files in `app/components/`.
+
+## Media inventory — every image/file on the site, and how to update each one
+
+There are three different patterns in use, depending on the image:
+
+**A. Drop any file into a folder — no code change needed**
+| What | Where | Notes |
+|---|---|---|
+| Gallery photos ("From the Hall") | `public/images/gallery/` | Any JPG/PNG/WEBP, any filename. Up to 6 shown, sorted alphabetically. Empty slots show a placeholder. |
+| Sponsor logos | `public/images/sponsors/` | Filename must match the slug in `lib/data.ts` exactly, e.g. `sport-england.png`. PNG/SVG/JPG/WEBP all work. |
+
+**B. Edit in Airtable — live within ~5 minutes, no push needed**
+| What | Where |
+|---|---|
+| Coach photos | Airtable → Coaches table → Photo field (attachment) |
+
+**C. Specific filename, referenced directly in the code — replacing the file (same name, same location) is enough, no code edit required; renaming it *does* require a one-line code change**
+| What | File | Used in |
+|---|---|---|
+| Club badge/logo (header + browser tab icon) | `public/images/logo.jpg` (also copied to `app/icon.jpg` for the favicon) | `app/components/Header.tsx` |
+| Hero section photo | `public/images/hero-action.jpg` | `app/components/Hero.tsx` |
+| "Our Story" founders photo | `public/images/founders.jpg` | `app/components/Story.tsx` |
+| Player Leadership photo | `public/images/player-leadership.jpg` | `app/components/Coaches.tsx` |
+| Safeguarding policy PDF | `public/documents/badminton-england-safeguarding-policy.pdf` | `app/components/Credentials.tsx` (via `lib/data.ts`) |
+
+For the type-C items: if you keep the exact same filename, you can just overwrite the file in
+your local project folder and push — no code changes needed. If you want to rename it or add
+a genuinely new photo in a new spot, that's a small code edit (updating the `src` path in the
+relevant component), which is the kind of change Webdog Marketing can help with, or any
+developer working from this repo.
