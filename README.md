@@ -162,9 +162,26 @@ the fallback content, but the join form will show an error until Airtable is con
 
 - **Coaches, credentials, session times, Facebook link** → `lib/data.ts` (or Airtable, for
   Coaches/Credentials).
+- **Photo captions and alt text** → `lib/data.ts`, in the `photoCaptions` object. This exists
+  specifically so short bits of copy like this can be edited in one predictable place, rather
+  than being buried inside a component file.
 - **Colours** → `tailwind.config.ts` (`ember`, `chalk`, `ink`, `steel` — pulled from your
   logo).
 - **Copy/wording** → the component files in `app/components/`.
+
+### Avoiding edits getting overwritten
+
+If you edit any text directly on GitHub (a caption, a heading, anything) between one zip
+export from Claude and the next, that edit only exists in your GitHub repo — Claude's next
+zip is generated from its own last-known copy of the project, which won't include your
+change unless you mention it first. To avoid a direct edit getting silently overwritten by an
+older version:
+
+1. Before asking for a new zip, mention anything you've changed directly on GitHub since the
+   last one — even a one-line caption tweak.
+2. For quick text-only changes going forward, editing `lib/data.ts` directly on GitHub is
+   often faster than asking for a new zip at all, since it's just plain text constants (no
+   JSX/layout code to accidentally break).
 
 ## Media inventory — every image/file on the site, and how to update each one
 
