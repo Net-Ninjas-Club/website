@@ -180,3 +180,19 @@ export const sponsors: Sponsor[] = [
 export const facebookUrl = 'https://www.facebook.com/groups/924072052433131/';
 
 export const safeguardingPolicyUrl = '/documents/badminton-england-safeguarding-policy.pdf';
+
+// Short photo captions and alt text, kept here so they can be edited without touching
+// component files. If you edit these directly on GitHub, tell Claude before asking for a
+// new zip export, so the edit isn't accidentally overwritten by an older local copy.
+export const photoCaptions = {
+  founders: {
+    caption: 'Club founders David & Becky Follett with their 2 daughters',
+    alt: 'David and Becky Follett with their two daughters, all in Net Ninjas kit',
+  },
+  heroAction: {
+    alt: 'A young Net Ninjas player mid-shot at a training session',
+  },
+  playerLeadership: {
+    alt: 'Net Ninjas player leadership team: Joshua, Josie and Oscar with their rackets on court',
+  },
+};

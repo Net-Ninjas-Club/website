@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getCoaches } from '@/lib/airtable';
-import { clubTeam, playerLeadership } from '@/lib/data';
+import { clubTeam, playerLeadership, photoCaptions } from '@/lib/data';
 
 export default async function Coaches() {
   const coaches = await getCoaches();
@@ -63,7 +63,7 @@ export default async function Coaches() {
               <div className="relative aspect-[3/2] w-full">
                 <Image
                   src="/images/player-leadership.jpg"
-                  alt="Net Ninjas player leadership team: Joshua, Josie and Oscar with their rackets on court"
+                  alt={photoCaptions.playerLeadership.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 480px"
                   className="object-cover"

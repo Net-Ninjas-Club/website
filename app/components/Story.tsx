@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { photoCaptions } from '@/lib/data';
 
 const stats = [
   { value: '2024', label: 'Club founded' },
@@ -26,15 +27,14 @@ export default function Story() {
               <div className="relative aspect-[3/2] w-full">
                 <Image
                   src="/images/founders.jpg"
-                  alt="David and Becky Follett with their two daughters, all in Net Ninjas kit"
+                  alt={photoCaptions.founders.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 480px"
                   className="object-cover"
                 />
               </div>
               <p className="bg-smoke px-4 py-3 text-xs text-steelDark">
-                David &amp; Becky Follett with their daughters &mdash; the family this club
-                started for.
+                {photoCaptions.founders.caption}
               </p>
             </div>
           </div>

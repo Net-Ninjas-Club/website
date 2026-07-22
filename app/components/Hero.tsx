@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { sessions, facebookUrl } from '@/lib/data';
+import { sessions, facebookUrl, photoCaptions } from '@/lib/data';
 
 export default function Hero() {
   return (
@@ -53,7 +53,7 @@ export default function Hero() {
                 <div className="relative aspect-[4/5] w-full">
                   <Image
                     src="/images/hero-action.jpg"
-                    alt="A young Net Ninjas player mid-shot at a training session"
+                    alt={photoCaptions.heroAction.alt}
                     fill
                     priority
                     sizes="(max-width: 768px) 60vw, 380px"
