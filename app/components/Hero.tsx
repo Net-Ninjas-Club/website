@@ -65,7 +65,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-3 sm:grid-cols-2">
+        <div className="mt-12 grid gap-3 sm:grid-cols-3">
           {sessions.map((s) => (
             <div key={s.id} className="belt border border-white/10 bg-smoke px-6 py-5">
               <p className="eyebrow text-ember">{s.ageGroup}</p>
