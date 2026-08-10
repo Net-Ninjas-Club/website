@@ -7,7 +7,7 @@ export default function Sessions() {
         <p className="eyebrow text-ember">Weekly sessions</p>
         <h2 className="mt-3 font-display text-4xl text-chalk sm:text-5xl">WHEN &amp; WHERE WE TRAIN</h2>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
           {sessions.map((s, i) => (
             <div key={s.id} className="belt border border-white/10 bg-ink p-7">
               <span className="eyebrow text-steelDark">Group {i + 1}</span>
